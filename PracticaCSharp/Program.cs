@@ -29,6 +29,13 @@ namespace PracticaCSharp
 						await generateApiUser.GetDataUser();
 						break;
 					case 2:
+						Console.WriteLine("================================");
+						Console.WriteLine("| Lista de usuarios por nombre |");
+						Console.WriteLine("--------------------------------");
+
+						SaveUserFiles saveUserFiles = new SaveUserFiles();
+
+						saveUserFiles.ListAllUser();
 						break;
 					case 3:
 						break;
@@ -55,7 +62,7 @@ namespace PracticaCSharp
 			Console.WriteLine("|                    Menu                    |");
 			Console.WriteLine("|--------------------------------------------|");
 			Console.WriteLine("| 1. Guardar usuario aleatorio               |");
-			Console.WriteLine("| 2. Buscar usuario por nombre               |");
+			Console.WriteLine("| 2. Mostrar usuarios por nombre             |");
 			Console.WriteLine("| 3. Mostrar top 10 fechas de nacimiento     |");
 			Console.WriteLine("| 4. Salir                                   |");
 			Console.WriteLine("==============================================");
