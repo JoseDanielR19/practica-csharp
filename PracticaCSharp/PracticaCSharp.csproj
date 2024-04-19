@@ -79,6 +79,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Address.cs" />
+    <Compile Include="DateOfBirth.cs" />
     <Compile Include="Dob.cs" />
     <Compile Include="GenerateApiUser.cs" />
     <Compile Include="Id.cs" />

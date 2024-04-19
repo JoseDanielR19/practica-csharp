@@ -7,15 +7,24 @@ using System.Threading.Tasks;
 
 namespace PracticaCSharp
 {
+	/// <summary>
+	/// Clase que proporciona métodos para generar datos de usuario a partir de una API externa.
+	/// </summary>
 	public class GenerateApiUser
 	{
 		private readonly HttpClient _client;
 
+		/// <summary>
+		/// Constructor de la clase GenerateApiUser.
+		/// </summary>
 		public GenerateApiUser()
 		{
 			this._client = new HttpClient();
 		}
 
+		/// <summary>
+		/// Obtiene datos de usuario de una API externa y guarda la información en archivos.
+		/// </summary>
 		public async Task GetDataUser()
 		{
 			HttpResponseMessage response = await this._client.GetAsync("https://randomuser.me/api/");
@@ -45,7 +54,7 @@ namespace PracticaCSharp
 						Username = randomUser.Login?.Username,
 						DateOfBirth = dateOfBirth.ToString("yyyy-MM-ddTHH:mm:ss.fffZ"),
 						Address = randomUser.Location != null ?
-		  $"{randomUser.Location.Street.Number} {randomUser.Location.Street.Name}, {randomUser.Location.City}, {randomUser.Location.State}, {randomUser.Location.Country}" : null
+							  $"{randomUser.Location.Street.Number} {randomUser.Location.Street.Name}, {randomUser.Location.City}, {randomUser.Location.State}, {randomUser.Location.Country}" : null
 					};
 
 					this.PrintDataUser(user);
@@ -61,6 +70,10 @@ namespace PracticaCSharp
 			}
 		}
 
+		/// <summary>
+		/// Imprime los datos del usuario en la consola.
+		/// </summary>
+		/// <param name="user">Objeto User que contiene los datos del usuario.</param>
 		private void PrintDataUser(User user)
 		{
 			Console.WriteLine("=====================================================================");
