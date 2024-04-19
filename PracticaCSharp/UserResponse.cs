@@ -4,6 +4,6 @@ namespace PracticaCSharp
 {
 	internal class UserResponse
 	{
-        public List<UserResult> Results { get; set; }
-    }
+		public List<UserResult> Results { get; set; }
+	}
 }
